@@ -1,9 +1,9 @@
-import { HeroSection } from "@/components/landing/HeroSection";
-import { HowItWorksSection } from "@/components/landing/HowItWorksSection";
-import { ChooseRoleSection } from "@/components/landing/ChooseRoleSection";
-import { AboutSection } from "@/components/landing/AboutSection";
-import { Navigation } from "@/components/landing/Navigation";
-import { Footer } from "@/components/landing/Footer";
+import { HeroSection } from "@/pages/landing/HeroSection";
+import { HowItWorksSection } from "@/pages/landing/HowItWorksSection";
+import { ChooseRoleSection } from "@/pages/landing/ChooseRoleSection";
+import { AboutSection } from "@/pages/landing/AboutSection";
+import { Navigation } from "@/components/Navigation";
+import { Footer } from "@/components/Footer";
 
 const Index = () => {
   return (

@@ -62,7 +62,7 @@ export const Navigation = () => {
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="md:hidden absolute top-18 left-0 right-0 bg-black/30">
+          <div className="md:hidden top-18 left-0 right-0">
             <div className="flex flex-col space-y-4 p-4">
               {navItems.map((item) => (
                 <a
