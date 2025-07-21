@@ -30,9 +30,9 @@ const steps = [
 
 export const HowItWorksSection = () => {
   return (
-    <section className="py-20 px-4 relative">
+    <section className="py-20 px-4 relative bg-[#06131D]">
       {/* Background Effect */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background/50 to-card/30"></div>
+      {/* <div className="absolute inset-0 bg-gradient-to-b from-background/50 to-card/30"></div> */}
       
       <div className="relative z-10 max-w-7xl mx-auto">
         {/* Section Header */}
