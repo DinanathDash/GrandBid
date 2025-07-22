@@ -76,7 +76,7 @@ export const Navigation = () => {
                   {item.name}
                 </a>
               ))}
-              <Button variant="magical" className="p-4 text-white font-garamond" onClick={() => setIsOpen(false)}>
+              <Button variant="magical" className="p-4 text-white font-garamond" onClick={() => { window.location.href = '/pre-signup'; setIsOpen(false); }}>
                 Jump Into the Auction
               </Button>
             </div>
