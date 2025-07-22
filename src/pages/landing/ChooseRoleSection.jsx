@@ -10,7 +10,8 @@ const roles = [
     icon: Crown,
     features: ["Host magical auctions", "Set bidding rules", "Manage tournaments", "Crown champions"],
     houseColor: "gryffindor",
-    badge: "Leadership"
+    badge: "Leadership",
+    nav: "/organizer-login"
   },
   {
     title: "Team Head",
@@ -19,7 +20,8 @@ const roles = [
     icon: Shield,
     features: ["Build dream teams", "Strategic bidding", "House management", "Player development"],
     houseColor: "ravenclaw", 
-    badge: "Strategy"
+    badge: "Strategy",
+    nav: "/bidder-login"
   },
   {
     title: "Player",
@@ -28,7 +30,9 @@ const roles = [
     icon: Wand2,
     features: ["Join prestigious teams", "Showcase magical skills", "Compete in tournaments", "Earn recognition"],
     houseColor: "hufflepuff",
-    badge: "Performance"
+    badge: "Performance",
+    nav: "/player-login"
+
   }
 ];
 
@@ -100,6 +104,7 @@ export const ChooseRoleSection = () => {
               <Button 
                 variant="magical"
                 className="w-full group/btn"
+                onClick={() => window.location.href = role.nav}
               >
                 <span className="font-cinzel">Begin as {role.title}</span>
                 <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform duration-300" />
