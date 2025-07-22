@@ -61,11 +61,11 @@ export const Footer = () => {
             </h4>
             <div className="space-y-3">
               <a
-                href="mailto:council@wizardingauction.com"
+                href="mailto:council@grandbid.com"
                 className="font-garamond text-gray-400 hover:text-amber-300 transition-colors duration-300 flex items-center gap-2 group"
               >
                 <Mail className="w-4 h-4 group-hover:scale-110 transition-transform duration-300" />
-                council@wizardingauction.com
+                council@grandbid.com
               </a>
 
               <div className="flex items-center gap-2 text-gray-400">
@@ -80,9 +80,9 @@ export const Footer = () => {
         <div className="grid grid-cols-4 gap-4 mb-8">
           {[
             { name: "Gryffindor", color: "gryffindor" },
-            { name: "Slytherin", color: "slytherin" },
             { name: "Ravenclaw", color: "ravenclaw" },
-            { name: "Hufflepuff", color: "hufflepuff" }
+            { name: "Hufflepuff", color: "hufflepuff" },
+            { name: "Slytherin", color: "slytherin" }
           ].map((house) => (
             <div
               key={house.name}

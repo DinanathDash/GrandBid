@@ -3,6 +3,19 @@
 
 @custom-variant dark (&:is(.dark *));
 
+/* Global scrollbar hiding styles */
+* {
+  scrollbar-width: none !important; /* Firefox */
+  -ms-overflow-style: none !important; /* IE and Edge */
+}
+
+*::-webkit-scrollbar {
+  width: 0 !important;
+  height: 0 !important;
+  display: none !important;
+  background: transparent !important;
+}
+
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
@@ -74,23 +87,35 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
-  
+
   /* House Colors - Authentic Harry Potter Theme */
-  --gryffindor-primary: #7c2d12; /* Burgundy/Dark Red */
-  --gryffindor-secondary: #f59e0b; /* Amber/Gold */
-  --gryffindor: #dc2626; /* Bright Red - Main color */
-  
-  --slytherin-primary: #6b7280; /* Silver/Gray */
-  --slytherin-secondary: #065f46; /* Dark Green */
-  --slytherin: #10b981; /* Emerald Green - Main color */
-  
-  --hufflepuff-primary: #eab308; /* Bright Yellow */
-  --hufflepuff-secondary: #1f2937; /* Black */
-  --hufflepuff: #fbbf24; /* Golden Yellow - Main color */
-  
-  --ravenclaw-primary: #1e40af; /* Deep Blue */
-  --ravenclaw-secondary: #92400e; /* Bronze */
-  --ravenclaw: #3b82f6; /* Blue - Main color */
+  --gryffindor-primary: #7c2d12;
+  /* Burgundy/Dark Red */
+  --gryffindor-secondary: #f59e0b;
+  /* Amber/Gold */
+  --gryffindor: #dc2626;
+  /* Bright Red - Main color */
+
+  --slytherin-primary: #6b7280;
+  /* Silver/Gray */
+  --slytherin-secondary: #065f46;
+  /* Dark Green */
+  --slytherin: #10b981;
+  /* Emerald Green - Main color */
+
+  --hufflepuff-primary: #eab308;
+  /* Bright Yellow */
+  --hufflepuff-secondary: #1f2937;
+  /* Black */
+  --hufflepuff: #fbbf24;
+  /* Golden Yellow - Main color */
+
+  --ravenclaw-primary: #1e40af;
+  /* Deep Blue */
+  --ravenclaw-secondary: #92400e;
+  /* Bronze */
+  --ravenclaw: #3b82f6;
+  /* Blue - Main color */
 }
 
 .dark {
@@ -131,84 +156,111 @@
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
-    overflow-x: hidden; /* Hide horizontal scrollbar */
   }
+
   html {
-    overflow-x: hidden; /* Ensure no horizontal scroll */
-    scroll-behavior: smooth; /* Enable smooth scrolling */
+    scroll-behavior: smooth;
+    /* Enable smooth scrolling */
   }
 }
 
 /* Custom Animations for Magical Effects */
 @keyframes sparkle {
-  0%, 100% { 
-    opacity: 0.3; 
+
+  0%,
+  100% {
+    opacity: 0.3;
     transform: scale(1) rotate(0deg);
   }
-  50% { 
-    opacity: 1; 
+
+  50% {
+    opacity: 1;
     transform: scale(1.2) rotate(180deg);
   }
 }
 
 @keyframes float {
-  0%, 100% { 
+
+  0%,
+  100% {
     transform: translateY(0px) rotate(0deg);
   }
-  50% { 
+
+  50% {
     transform: translateY(-10px) rotate(3deg);
   }
 }
 
 @keyframes magical-fade-in {
-  0% { 
-    opacity: 0; 
+  0% {
+    opacity: 0;
     transform: translateY(30px) scale(0.95);
   }
-  100% { 
-    opacity: 1; 
+
+  100% {
+    opacity: 1;
     transform: translateY(0px) scale(1);
   }
 }
 
 @keyframes magical-shimmer {
-  0% { transform: translateX(-100%) skewX(-12deg); }
-  100% { transform: translateX(200%) skewX(-12deg); }
+  0% {
+    transform: translateX(-100%) skewX(-12deg);
+  }
+
+  100% {
+    transform: translateX(200%) skewX(-12deg);
+  }
 }
 
 @keyframes particle-drift {
-  0% { 
+  0% {
     transform: translateY(0px) translateX(0px) rotate(0deg);
     opacity: 0.4;
   }
-  25% { 
+
+  25% {
     transform: translateY(-20px) translateX(10px) rotate(90deg);
     opacity: 0.8;
   }
-  50% { 
+
+  50% {
     transform: translateY(-10px) translateX(-15px) rotate(180deg);
     opacity: 1;
   }
-  75% { 
+
+  75% {
     transform: translateY(-30px) translateX(5px) rotate(270deg);
     opacity: 0.6;
   }
-  100% { 
+
+  100% {
     transform: translateY(-40px) translateX(-10px) rotate(360deg);
     opacity: 0.2;
   }
 }
 
 @keyframes spin-slow {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 @keyframes spin-reverse {
-  from { transform: rotate(360deg); }
-  to { transform: rotate(0deg); }
+  from {
+    transform: rotate(360deg);
+  }
+
+  to {
+    transform: rotate(0deg);
+  }
 }
 
 body {
@@ -254,36 +306,120 @@ body {
 }
 
 /* House Color Classes - Authentic Harry Potter Theme */
-.text-gryffindor { color: var(--gryffindor); }
-.bg-gryffindor { background-color: var(--gryffindor); }
-.border-gryffindor { border-color: var(--gryffindor); }
-.bg-gryffindor\/10 { background-color: rgba(220, 38, 38, 0.1); }
-.bg-gryffindor\/20 { background-color: rgba(220, 38, 38, 0.2); }
-.border-gryffindor\/20 { border-color: rgba(220, 38, 38, 0.2); }
+.text-gryffindor {
+  color: var(--gryffindor);
+}
 
-.text-slytherin { color: var(--slytherin); }
-.bg-slytherin { background-color: var(--slytherin); }
-.border-slytherin { border-color: var(--slytherin); }
-.bg-slytherin\/10 { background-color: rgba(16, 185, 129, 0.1); }
-.bg-slytherin\/20 { background-color: rgba(16, 185, 129, 0.2); }
-.border-slytherin\/20 { border-color: rgba(16, 185, 129, 0.2); }
+.bg-gryffindor {
+  background-color: var(--gryffindor);
+}
 
-.text-hufflepuff { color: var(--hufflepuff); }
-.bg-hufflepuff { background-color: var(--hufflepuff); }
-.border-hufflepuff { border-color: var(--hufflepuff); }
-.bg-hufflepuff\/10 { background-color: rgba(251, 191, 36, 0.1); }
-.bg-hufflepuff\/20 { background-color: rgba(251, 191, 36, 0.2); }
-.border-hufflepuff\/20 { border-color: rgba(251, 191, 36, 0.2); }
+.border-gryffindor {
+  border-color: var(--gryffindor);
+}
 
-.text-ravenclaw { color: var(--ravenclaw); }
-.bg-ravenclaw { background-color: var(--ravenclaw); }
-.border-ravenclaw { border-color: var(--ravenclaw); }
-.bg-ravenclaw\/10 { background-color: rgba(59, 130, 246, 0.1); }
-.bg-ravenclaw\/20 { background-color: rgba(59, 130, 246, 0.2); }
-.border-ravenclaw\/20 { border-color: rgba(59, 130, 246, 0.2); }
+.bg-gryffindor\/10 {
+  background-color: rgba(220, 38, 38, 0.1);
+}
+
+.bg-gryffindor\/20 {
+  background-color: rgba(220, 38, 38, 0.2);
+}
+
+.border-gryffindor\/20 {
+  border-color: rgba(220, 38, 38, 0.2);
+}
+
+.text-slytherin {
+  color: var(--slytherin);
+}
+
+.bg-slytherin {
+  background-color: var(--slytherin);
+}
+
+.border-slytherin {
+  border-color: var(--slytherin);
+}
+
+.bg-slytherin\/10 {
+  background-color: rgba(16, 185, 129, 0.1);
+}
+
+.bg-slytherin\/20 {
+  background-color: rgba(16, 185, 129, 0.2);
+}
+
+.border-slytherin\/20 {
+  border-color: rgba(16, 185, 129, 0.2);
+}
+
+.text-hufflepuff {
+  color: var(--hufflepuff);
+}
+
+.bg-hufflepuff {
+  background-color: var(--hufflepuff);
+}
+
+.border-hufflepuff {
+  border-color: var(--hufflepuff);
+}
+
+.bg-hufflepuff\/10 {
+  background-color: rgba(251, 191, 36, 0.1);
+}
+
+.bg-hufflepuff\/20 {
+  background-color: rgba(251, 191, 36, 0.2);
+}
+
+.border-hufflepuff\/20 {
+  border-color: rgba(251, 191, 36, 0.2);
+}
+
+.text-ravenclaw {
+  color: var(--ravenclaw);
+}
+
+.bg-ravenclaw {
+  background-color: var(--ravenclaw);
+}
+
+.border-ravenclaw {
+  border-color: var(--ravenclaw);
+}
+
+.bg-ravenclaw\/10 {
+  background-color: rgba(59, 130, 246, 0.1);
+}
+
+.bg-ravenclaw\/20 {
+  background-color: rgba(59, 130, 246, 0.2);
+}
+
+.border-ravenclaw\/20 {
+  border-color: rgba(59, 130, 246, 0.2);
+}
 
 /* Additional House Accent Colors */
-.text-gryffindor-gold { color: var(--gryffindor-secondary); }
-.text-slytherin-silver { color: var(--slytherin-primary); }
-.text-hufflepuff-black { color: var(--hufflepuff-secondary); }
-.text-ravenclaw-bronze { color: var(--ravenclaw-secondary); }
+.text-gryffindor-gold {
+  color: var(--gryffindor-secondary);
+}
+
+.text-slytherin-silver {
+  color: var(--slytherin-primary);
+}
+
+.text-hufflepuff-black {
+  color: var(--hufflepuff-secondary);
+}
+
+.text-ravenclaw-bronze {
+  color: var(--ravenclaw-secondary);
+}
+
+::selection {
+  background: rgba(140, 120, 9, 0.15); /* theme accent */
+
+}
