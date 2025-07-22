@@ -20,88 +20,83 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '../../components/ui/ta
 export default function BidderPlayers() {
   const [selectedTab, setSelectedTab] = useState('all');
 
-  const players = [
+  const wizards = [
     {
       id: 1,
-      name: 'Virat Kohli',
-      position: 'Batsman',
-      team: 'India',
-      basePrice: 15000000,
-      currentBid: 18500000,
+      name: 'Hermione Granger',
+      position: 'Spell Caster',
+      house: 'Gryffindor',
+      basePrice: 15000,
+      currentBid: 18500,
       rating: 9.2,
       status: 'bidding',
       avatar: '/api/placeholder/60/60',
-      stats: { matches: 254, runs: 12169, avg: 59.07 }
+      stats: { spells: 254, accuracy: 98.2, power: 59.07 }
     },
     {
       id: 2,
-      name: 'MS Dhoni',
-      position: 'Wicket Keeper',
-      team: 'India',
-      basePrice: 12000000,
-      currentBid: 12000000,
+      name: 'Harry Potter',
+      position: 'Seeker',
+      house: 'Gryffindor',
+      basePrice: 12000,
+      currentBid: 12000,
       rating: 8.9,
       status: 'owned',
       avatar: '/api/placeholder/60/60',
-      stats: { matches: 350, runs: 10773, avg: 50.57 }
+      stats: { matches: 350, catches: 287, speed: 95.5 }
     },
     {
       id: 3,
-      name: 'Rohit Sharma',
-      position: 'Batsman',
-      team: 'India',
-      basePrice: 14000000,
-      currentBid: 16800000,
+      name: 'Luna Lovegood',
+      position: 'Mystic',
+      house: 'Ravenclaw',
+      basePrice: 14000,
+      currentBid: 16800,
       rating: 8.7,
       status: 'available',
       avatar: '/api/placeholder/60/60',
-      stats: { matches: 243, runs: 9115, avg: 48.96 }
+      stats: { visions: 243, predictions: 189, accuracy: 78.2 }
     },
     {
       id: 4,
-      name: 'Jasprit Bumrah',
-      position: 'Bowler',
-      team: 'India',
-      basePrice: 10000000,
-      currentBid: 13200000,
+      name: 'Severus Snape',
+      position: 'Potions Master',
+      house: 'Slytherin',
+      basePrice: 10000,
+      currentBid: 13200,
       rating: 9.0,
       status: 'watchlist',
       avatar: '/api/placeholder/60/60',
-      stats: { matches: 120, wickets: 225, avg: 20.06 }
+      stats: { potions: 120, brews: 225, mastery: 95.8 }
     },
     {
       id: 5,
-      name: 'AB de Villiers',
-      position: 'Batsman',
-      team: 'South Africa',
-      basePrice: 16000000,
-      currentBid: 19500000,
+      name: 'Albus Dumbledore',
+      position: 'Grandmaster Wizard',
+      house: 'Gryffindor',
+      basePrice: 16000,
+      currentBid: 19500,
       rating: 9.4,
       status: 'bidding',
       avatar: '/api/placeholder/60/60',
-      stats: { matches: 228, runs: 9577, avg: 53.50 }
+      stats: { experience: 228, wisdom: 99.9, power: 98.5 }
     },
     {
       id: 6,
-      name: 'David Warner',
-      position: 'Batsman',
-      team: 'Australia',
-      basePrice: 11000000,
-      currentBid: 11000000,
+      name: 'Minerva McGonagall',
+      position: 'Transfiguration Expert',
+      house: 'Gryffindor',
+      basePrice: 11000,
+      currentBid: 11000,
       rating: 8.5,
       status: 'available',
       avatar: '/api/placeholder/60/60',
-      stats: { matches: 161, runs: 6932, avg: 44.89 }
+      stats: { transformations: 161, success: 94.2, complexity: 87.3 }
     }
   ];
 
   const formatCurrency = (amount) => {
-    return new Intl.NumberFormat('en-IN', {
-      style: 'currency',
-      currency: 'INR',
-      minimumFractionDigits: 0,
-      maximumFractionDigits: 0,
-    }).format(amount);
+    return `${amount.toLocaleString()} Galleons`;
   };
 
   const getStatusColor = (status) => {
@@ -117,15 +112,15 @@ export default function BidderPlayers() {
     }
   };
 
-  const filteredPlayers = selectedTab === 'all' 
-    ? players 
-    : players.filter(player => player.status === selectedTab);
+  const filteredWizards = selectedTab === 'all' 
+    ? wizards 
+    : wizards.filter(wizard => wizard.status === selectedTab);
 
   const stats = {
-    totalPlayers: players.length,
-    ownedPlayers: players.filter(p => p.status === 'owned').length,
-    biddingPlayers: players.filter(p => p.status === 'bidding').length,
-    watchlistPlayers: players.filter(p => p.status === 'watchlist').length,
+    totalWizards: wizards.length,
+    ownedWizards: wizards.filter(w => w.status === 'owned').length,
+    biddingWizards: wizards.filter(w => w.status === 'bidding').length,
+    watchlistWizards: wizards.filter(w => w.status === 'watchlist').length,
   };
 
   return (
@@ -133,14 +128,13 @@ export default function BidderPlayers() {
       {/* Header with Search and Filters */}
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
         <div>
-          <h1 className="text-3xl font-bold text-gray-900">Players</h1>
-          <p className="text-gray-600">Manage your player portfolio and discover new talent</p>
+          <p className="text-gray-600">Manage your magical team and discover new talent for your house</p>
         </div>
         <div className="flex items-center space-x-3">
           <div className="relative">
             <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={16} />
             <Input
-              placeholder="Search players..."
+              placeholder="Search wizards..."
               className="pl-10 pr-4 py-2 w-64"
             />
           </div>
@@ -158,8 +152,8 @@ export default function BidderPlayers() {
             <div className="flex items-center">
               <Users className="h-8 w-8 text-blue-600" />
               <div className="ml-4">
-                <p className="text-sm font-medium text-gray-600">Total Players</p>
-                <p className="text-2xl font-bold">{stats.totalPlayers}</p>
+                <p className="text-sm font-medium text-gray-600">Total Wizards</p>
+                <p className="text-2xl font-bold">{stats.totalWizards}</p>
               </div>
             </div>
           </CardContent>
@@ -169,8 +163,8 @@ export default function BidderPlayers() {
             <div className="flex items-center">
               <Star className="h-8 w-8 text-green-600" />
               <div className="ml-4">
-                <p className="text-sm font-medium text-gray-600">Owned</p>
-                <p className="text-2xl font-bold">{stats.ownedPlayers}</p>
+                <p className="text-sm font-medium text-gray-600">Acquired</p>
+                <p className="text-2xl font-bold">{stats.ownedWizards}</p>
               </div>
             </div>
           </CardContent>
@@ -181,7 +175,7 @@ export default function BidderPlayers() {
               <TrendingUp className="h-8 w-8 text-blue-600" />
               <div className="ml-4">
                 <p className="text-sm font-medium text-gray-600">Bidding</p>
-                <p className="text-2xl font-bold">{stats.biddingPlayers}</p>
+                <p className="text-2xl font-bold">{stats.biddingWizards}</p>
               </div>
             </div>
           </CardContent>
@@ -192,26 +186,26 @@ export default function BidderPlayers() {
               <Heart className="h-8 w-8 text-red-600" />
               <div className="ml-4">
                 <p className="text-sm font-medium text-gray-600">Watchlist</p>
-                <p className="text-2xl font-bold">{stats.watchlistPlayers}</p>
+                <p className="text-2xl font-bold">{stats.watchlistWizards}</p>
               </div>
             </div>
           </CardContent>
         </Card>
       </div>
 
-      {/* Players Tabs */}
+      {/* Wizards Tabs */}
       <Card>
         <CardHeader>
-          <CardTitle>Player Portfolio</CardTitle>
+          <CardTitle>Wizard Portfolio</CardTitle>
           <CardDescription>
-            View and manage all players across different categories
+            View and manage all wizards across different categories
           </CardDescription>
         </CardHeader>
         <CardContent>
           <Tabs value={selectedTab} onValueChange={setSelectedTab} className="w-full">
             <TabsList className="grid w-full grid-cols-5">
-              <TabsTrigger value="all">All Players</TabsTrigger>
-              <TabsTrigger value="owned">Owned</TabsTrigger>
+              <TabsTrigger value="all">All Wizards</TabsTrigger>
+              <TabsTrigger value="owned">Acquired</TabsTrigger>
               <TabsTrigger value="bidding">Bidding</TabsTrigger>
               <TabsTrigger value="watchlist">Watchlist</TabsTrigger>
               <TabsTrigger value="available">Available</TabsTrigger>
@@ -219,21 +213,21 @@ export default function BidderPlayers() {
 
             <TabsContent value={selectedTab} className="mt-6">
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {filteredPlayers.map((player) => (
-                  <Card key={player.id} className="hover:shadow-lg transition-shadow">
+                {filteredWizards.map((wizard) => (
+                  <Card key={wizard.id} className="hover:shadow-lg transition-shadow">
                     <CardContent className="p-6">
                       <div className="flex items-start justify-between mb-4">
                         <div className="flex items-center space-x-3">
                           <Avatar className="w-16 h-16">
-                            <AvatarImage src={player.avatar} />
-                            <AvatarFallback>{player.name.split(' ').map(n => n[0]).join('')}</AvatarFallback>
+                            <AvatarImage src={wizard.avatar} />
+                            <AvatarFallback>{wizard.name.split(' ').map(n => n[0]).join('')}</AvatarFallback>
                           </Avatar>
                           <div>
-                            <h3 className="font-semibold text-lg">{player.name}</h3>
-                            <p className="text-sm text-gray-600">{player.position} • {player.team}</p>
+                            <h3 className="font-semibold text-lg">{wizard.name}</h3>
+                            <p className="text-sm text-gray-600">{wizard.position} • {wizard.house}</p>
                             <div className="flex items-center space-x-1 mt-1">
                               <Star className="h-4 w-4 fill-yellow-400 text-yellow-400" />
-                              <span className="text-sm font-medium">{player.rating}</span>
+                              <span className="text-sm font-medium">{wizard.rating}</span>
                             </div>
                           </div>
                         </div>
@@ -245,46 +239,41 @@ export default function BidderPlayers() {
                       <div className="space-y-3">
                         <div className="flex justify-between items-center">
                           <span className="text-sm text-gray-600">Base Price</span>
-                          <span className="font-medium">{formatCurrency(player.basePrice)}</span>
+                          <span className="font-medium">{formatCurrency(wizard.basePrice)}</span>
                         </div>
                         <div className="flex justify-between items-center">
                           <span className="text-sm text-gray-600">Current Bid</span>
-                          <span className="font-bold text-lg">{formatCurrency(player.currentBid)}</span>
+                          <span className="font-bold text-lg">{formatCurrency(wizard.currentBid)}</span>
                         </div>
                         <div className="flex justify-between items-center">
                           <span className="text-sm text-gray-600">Status</span>
-                          <Badge className={getStatusColor(player.status)}>
-                            {player.status.charAt(0).toUpperCase() + player.status.slice(1)}
+                          <Badge className={getStatusColor(wizard.status)}>
+                            {wizard.status.charAt(0).toUpperCase() + wizard.status.slice(1)}
                           </Badge>
                         </div>
                       </div>
 
                       <div className="mt-4 pt-4 border-t border-gray-100">
                         <div className="flex justify-between text-xs text-gray-600">
-                          <span>Matches: {player.stats.matches}</span>
-                          <span>
-                            {player.position === 'Bowler' 
-                              ? `Wickets: ${player.stats.wickets}` 
-                              : `Runs: ${player.stats.runs}`
-                            }
-                          </span>
-                          <span>Avg: {player.stats.avg}</span>
+                          <span>{Object.keys(wizard.stats)[0]}: {Object.values(wizard.stats)[0]}</span>
+                          <span>{Object.keys(wizard.stats)[1]}: {Object.values(wizard.stats)[1]}</span>
+                          <span>{Object.keys(wizard.stats)[2]}: {Object.values(wizard.stats)[2]}</span>
                         </div>
                       </div>
 
                       <div className="mt-4 flex space-x-2">
-                        <Button variant="outline" size="sm" className="flex-1">
+                        <Button variant="outline" size="sm" className="flex-1" onClick={() => {window.location.href = '/bidder/players/player-info/' + wizard.id}}>
                           <Eye className="h-4 w-4 mr-1" />
                           View
                         </Button>
                         <Button 
-                          variant={player.status === 'bidding' ? 'default' : 'outline'} 
+                          variant={wizard.status === 'bidding' ? 'default' : 'outline'} 
                           size="sm" 
                           className="flex-1"
                         >
-                          {player.status === 'owned' ? 'Owned' : 
-                           player.status === 'bidding' ? 'Bid Now' : 
-                           player.status === 'watchlist' ? 'Watching' : 'Place Bid'}
+                          {wizard.status === 'owned' ? 'Acquired' : 
+                           wizard.status === 'bidding' ? 'Bid Now' : 
+                           wizard.status === 'watchlist' ? 'Watching' : 'Place Bid'}
                         </Button>
                       </div>
                     </CardContent>
@@ -292,14 +281,14 @@ export default function BidderPlayers() {
                 ))}
               </div>
 
-              {filteredPlayers.length === 0 && (
+              {filteredWizards.length === 0 && (
                 <div className="text-center py-12">
                   <Users className="h-12 w-12 text-gray-400 mx-auto mb-4" />
-                  <h3 className="text-lg font-medium text-gray-900 mb-2">No players found</h3>
+                  <h3 className="text-lg font-medium text-gray-900 mb-2">No wizards found</h3>
                   <p className="text-gray-600">
                     {selectedTab === 'all' 
-                      ? 'No players available at the moment.' 
-                      : `No players in ${selectedTab} category.`
+                      ? 'No wizards available at the moment.' 
+                      : `No wizards in ${selectedTab} category.`
                     }
                   </p>
                 </div>
