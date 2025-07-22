@@ -1,4 +1,4 @@
-export default function Login() {
+export default function OrganiserLogin() {
     return (
         <div className="min-h-screen bg-background mt-24">
             <h1 className="text-3xl font-bold text-center mt-10">LogIn Page</h1>
