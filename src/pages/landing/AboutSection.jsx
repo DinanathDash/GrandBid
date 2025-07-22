@@ -13,7 +13,7 @@ export const AboutSection = () => {
         {/* Main Story Card */}
         <Card className="mystical-card p-12 relative overflow-hidden bg-slate-800/80 border-slate-700/50 backdrop-blur-sm">
           {/* Decorative Quill */}
-          <div className="absolute top-8 right-8 w-24 h-24 opacity-20 rotate-12">
+          <div className="absolute top-8 right-8 w-24 h-24 opacity-70">
             <img src={quillImage} alt="Magical Quill" className="w-full h-full object-cover rounded-full" />
           </div>
 
@@ -26,7 +26,7 @@ export const AboutSection = () => {
               
               <div className="space-y-6 font-garamond text-lg leading-relaxed text-gray-300">
                 <p>
-                  In the hallowed halls of the wizarding world, where the greatest magical minds have gathered for centuries, a new tradition was born. Inspired by the legendary Quidditch World Cup and infused with the strategic brilliance of muggle sporting auctions, the <span className="text-amber-400 font-semibold">Wizarding Auction League</span> emerged as the most prestigious team-building event in magical history.
+                  In the hallowed halls of the wizarding world, where the greatest magical minds have gathered for centuries, a new tradition was born. Inspired by the legendary Quidditch World Cup and infused with the strategic brilliance of muggle sporting auctions, the <span className="text-amber-400 font-semibold">GrandBid</span> emerged as the most prestigious team-building event in magical history.
                 </p>
                 
                 <p>

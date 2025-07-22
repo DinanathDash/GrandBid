@@ -5,8 +5,10 @@
 
 /* Global scrollbar hiding styles */
 * {
-  scrollbar-width: none !important; /* Firefox */
-  -ms-overflow-style: none !important; /* IE and Edge */
+  scrollbar-width: none !important;
+  /* Firefox */
+  -ms-overflow-style: none !important;
+  /* IE and Edge */
 }
 
 *::-webkit-scrollbar {
@@ -264,7 +266,7 @@
 }
 
 body {
-  font-family: 'Playfair Display', serif;
+  font-family: "Noto Serif", serif;
 }
 
 /* Animation Classes */
@@ -420,6 +422,12 @@ body {
 }
 
 ::selection {
-  background: rgba(140, 120, 9, 0.15); /* theme accent */
+  background: rgba(140, 120, 9, 0.15);
+  /* theme accent */
 
+}
+
+button,
+a {
+  cursor: pointer;
 }

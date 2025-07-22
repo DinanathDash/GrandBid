@@ -70,7 +70,8 @@ export default function WizardingAuctionLanding() {
               </div>
             </div>
 
-            <button className="w-full bg-gradient-to-r from-[#059669] to-[#10b981] text-white py-4 px-6 rounded-xl font-bold hover:from-[#047857] hover:to-[#059669] transition-all duration-200 transform hover:scale-105 shadow-lg relative z-10">
+            <button className="w-full bg-gradient-to-r from-[#059669] to-[#10b981] text-white py-4 px-6 rounded-xl font-bold hover:from-[#047857] hover:to-[#059669] transition-all duration-200 transform hover:scale-105 shadow-lg relative z-10"
+              onClick={() => { window.location.href = '/organizer-login'; }}>
               Assemble Your House
             </button>
           </div>
@@ -119,7 +120,8 @@ export default function WizardingAuctionLanding() {
               </div>
             </div>
 
-            <button className="w-full bg-gradient-to-r from-[#2563eb] to-[#3b82f6] text-white py-4 px-6 rounded-xl font-bold hover:from-[#1d4ed8] hover:to-[#2563eb] transition-all duration-200 transform hover:scale-105 shadow-lg relative z-10 mb-6">
+            <button className="w-full bg-gradient-to-r from-[#2563eb] to-[#3b82f6] text-white py-4 px-6 rounded-xl font-bold hover:from-[#1d4ed8] hover:to-[#2563eb] transition-all duration-200 transform hover:scale-105 shadow-lg relative z-10 mb-6"
+              onClick={() => { window.location.href = '/bidder-login'; }}>
               Study the Roster
             </button>
           </div>
@@ -168,7 +170,8 @@ export default function WizardingAuctionLanding() {
               </div>
             </div>
 
-            <button className="w-full bg-gradient-to-r from-[#b91c1c] to-[#f59e0b] text-white py-4 px-6 rounded-xl font-bold hover:from-[#991b1b] hover:to-[#d97706] transition-all duration-200 transform hover:scale-105 shadow-lg relative z-10">
+            <button className="w-full bg-gradient-to-r from-[#b91c1c] to-[#f59e0b] text-white py-4 px-6 rounded-xl font-bold hover:from-[#991b1b] hover:to-[#d97706] transition-all duration-200 transform hover:scale-105 shadow-lg relative z-10"
+              onClick={() => { window.location.href = '/player-login'; }}>
               Register as Wizard
             </button>
           </div>

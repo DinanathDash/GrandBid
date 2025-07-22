@@ -8,9 +8,9 @@ import { Toaster } from "@/components/ui/sonner";
 import { toast } from "sonner";
 import { Separator } from "@/components/ui/separator";
 import Logo from '@/assets/logo.png';
-import bg from '@/assets/bg3.jpg';
+import bg from '@/assets/bg2.jpg';
 
-export default function PlayerLogin() {
+export default function OrganizerLogin() {
   const [isLogin, setIsLogin] = useState(true);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -215,13 +215,14 @@ export default function PlayerLogin() {
         backgroundSize: 'cover',
         backgroundPosition: 'center',
       }}>
+    <div className="absolute inset-0 bg-black/40 z-0"></div>
       {/* Logo positioned at absolute top left corner of window */}
       <div className="fixed top-3 sm:top-4 left-3 sm:left-4 z-10">
         <img src={Logo} alt="GrandBid Logo" className="h-14 sm:h-14 md:h-16 w-auto cursor-pointer" onClick={() => navigate('/')} />
       </div>
 
       <div className="w-full max-w-[90%] xs:max-w-[360px] sm:max-w-md relative mx-auto">
-        <Card className="backdrop-blur-lg bg-amber-50/70 border-2 border-amber-200/50 shadow-2xl w-full rounded-2xl overflow-hidden">
+        <Card className="backdrop-blur-md bg-amber-50/70 border-2 border-amber-200/50 shadow-2xl w-full rounded-2xl overflow-hidden">
           <CardHeader className="pb-2 sm:pb-4">
             <CardTitle className="text-center text-xl sm:text-2xl font-bold text-amber-900 font-serif">
               {isResetPassword ? 'Reset Password' : isLogin ? 'Sign in with email' : 'Register'}
