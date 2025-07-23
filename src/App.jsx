@@ -8,6 +8,9 @@ import useScrollbarVisibility from "./hooks/use-scrollbar-visibility";
 import BidderApp from "./pages/bidder/BidderApp";
 import { AuthProvider } from "./contexts/AuthContext";
 import ProtectedRoute from "./components/ProtectedRoute";
+import MagicalTerms from "./pages/landing/MagicalTerms";
+import PrivacyEnchantments from "./pages/landing/PrivacyEnchantments";
+import HouseRules from "./pages/landing/HouseRules";
 
 const App = () => {
   // Use custom hook to hide scrollbars
@@ -23,6 +26,9 @@ const App = () => {
           <Route path="/organizer-login" element={<OrganizerLogin />} />
           <Route path="/bidder-login" element={<BidderLogin />} />
           <Route path="/player-login" element={<PlayerLogin />} />
+          <Route path="/magical-terms" element={<MagicalTerms />} />
+          <Route path="/privacy-enchantments" element={<PrivacyEnchantments />} />
+          <Route path="/house-rules" element={<HouseRules />} />
 
           {/* Bidder Dashboard with Navigation */}
           <Route path="/bidder-dashboard" element={
