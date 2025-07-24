@@ -99,13 +99,13 @@ export const Footer = () => {
           </div>
 
           <div className="flex items-center gap-6 text-sm font-garamond text-gray-400">
-            <a href="#" className="hover:text-amber-300 transition-colors duration-300">
+            <a href="/magical-terms" className="hover:text-amber-300 transition-colors duration-300">
               Magical Terms
             </a>
-            <a href="#" className="hover:text-amber-300 transition-colors duration-300">
+            <a href="/privacy-enchantments" className="hover:text-amber-300 transition-colors duration-300">
               Privacy Enchantments
             </a>
-            <a href="#" className="hover:text-amber-300 transition-colors duration-300">
+            <a href="/house-rules" className="hover:text-amber-300 transition-colors duration-300">
               House Rules
             </a>
           </div>
