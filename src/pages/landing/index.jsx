@@ -4,6 +4,7 @@ import { ChooseRoleSection } from "@/pages/landing/ChooseRoleSection";
 import { AboutSection } from "@/pages/landing/AboutSection";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
+import { Chatbot } from "@/components/ui/chatbot";
 
 const Index = () => {
   return (
@@ -18,6 +19,9 @@ const Index = () => {
       </main>
 
       <Footer />
+      
+      {/* Add Chatbot only on landing page */}
+      <Chatbot />
     </div>
   );
 };

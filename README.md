@@ -262,6 +262,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ---
 
 <div align="center">
-  <p>Created with ✨ and 🪄 by <a href="https://github.com/DinanathDash">DinanathDash</a></p>
+  <p>Created with ✨ and 🪄 by Team GrandBid</p>
   <p>© 2025 GrandBid. All magical rights reserved.</p>
 </div>

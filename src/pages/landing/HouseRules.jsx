@@ -4,6 +4,8 @@ import { Footer } from "@/components/Footer";
 import { Card } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
+import { Chatbot } from "@/components/ui/chatbot";
+
 export const HouseRules = () => {
   const houses = [
     {
@@ -41,6 +43,9 @@ export const HouseRules = () => {
   return (
     <div className="min-h-screen bg-[#06131D]">
       <Navigation />
+      
+      {/* Add Chatbot on this landing page */}
+      <Chatbot />
 
       <main className="py-30 px-4 -mb-16">
         <div className="max-w-4xl mx-auto">
